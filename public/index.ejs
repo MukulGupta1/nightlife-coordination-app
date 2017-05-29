@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scene Tonight</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+		<% include head %>
+    <link href="/public/css/placeSearch.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+		<% include header %>
+
+		<div class = container>
+
+
+    <h1>Scene Tonight</h1>
+
+    <div id="locationField">
+      <input id="autocomplete" placeholder="Enter a city" type="text" />
+    </div>
+
+    <div id="map"></div>
+
+		<div id="cards"></div>
+
+    <div id="listing">
+      <table id="resultsTable">
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">Address:</td>
+            <td id="iw-address"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">Telephone:</td>
+            <td id="iw-phone"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">Rating:</td>
+            <td id="iw-rating"></td>
+          </tr>
+          <tr id="iw-website-row" class="iw_table_row">
+            <td class="iw_attribute_name">Website:</td>
+            <td id="iw-website"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+		</div>
+    <script src="/controllers/placeSearch.client.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkZyztG3U4mSPVVP0RabfV589IDbT1iAg&libraries=places&callback=initMap"
+        async defer></script>
+  </body>
+</html>

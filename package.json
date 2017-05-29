@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/MukulGupta1/nightlife-coordination-app#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "env": "0.0.2",
     "express": "^4.15.2",
-    "mongodb": "^2.2.26"
+    "express-session": "^1.15.2",
+    "mongoose": "^4.9.9",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1"
   }
 }
