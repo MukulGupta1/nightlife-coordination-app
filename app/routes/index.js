@@ -41,9 +41,19 @@ module.exports = function (app, passport) {
         res.sendFile(path + '/public/profile.html');
     });
 
-  app.route('/api/:id')
-    .get(isLoggedIn, function (req, res) {
-        res.json(req.user.fb);
+  app.route('/api/user')
+    .get(function (req, res) {
+      if(req.user){
+        res.json({
+          id: req.user.fb.id,
+          access_token: req.user.fb.access_token,
+          name: req.user.fb.name,
+          email: req.user.fb.email
+        });
+      }
+      else{
+        res.json({})
+      }
     });
 
   app.route('/auth/facebook')
@@ -59,5 +69,14 @@ module.exports = function (app, passport) {
 
   app.route('/addVisit')
     .post(isLoggedIn, visitHandler.addVisit)
+
+  app.route('/api/visits/:id')
+		.get(isLoggedIn, visitHandler.getVisits)
+
+  app.route('/api/user/:id/visitStatus')
+    .get(isLoggedIn, visitHandler.getVisitStatus)
+
+  app.route('/api/user/:id/visitStatus/:visitStatus')
+    .post(isLoggedIn, visitHandler.updateVisitStatus)
 
 };

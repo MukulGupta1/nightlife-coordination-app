@@ -5,8 +5,14 @@
   float:left;
   width:300px;
   margin-right:20px;
+}
+
+.btn {
   cursor: pointer;
 }
+
+
+
 
 
 .card-title{
